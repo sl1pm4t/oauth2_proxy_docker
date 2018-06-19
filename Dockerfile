@@ -1,4 +1,4 @@
-FROM golang:1.9 as builder
+FROM golang:1.10.1 as builder
 
 RUN go get -d github.com/bitly/oauth2_proxy
 RUN CGO_ENABLED=0 GOOS=linux go build -a --ldflags '-extldflags "-static"' github.com/bitly/oauth2_proxy
